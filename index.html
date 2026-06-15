@@ -168,18 +168,17 @@
             box-shadow: var(--shadow-large);
         }
         
-        /* Updated Hero Seal to contain the logo */
         .hero-seal {
             width: 96px; height: 96px; margin: 0 auto 20px;
             border-radius: 50%; border: 2px solid rgba(201,162,75,0.5);
-            background: var(--white); /* Changed to white for better logo contrast if it has a transparent background */
+            background: var(--white);
             display: flex; align-items: center; justify-content: center;
-            overflow: hidden; /* Ensures the image doesn't break the circle */
+            overflow: hidden;
         }
         .hero-seal img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Change to 'contain' if parts of the logo are cut off */
+            object-fit: cover;
         }
         
         .hero-card h3 { font-family: 'Frank Ruhl Libre', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 6px; color: var(--white); }
@@ -344,8 +343,10 @@
         /* ===== Contact ===== */
         .contact { padding: 80px 0; background: var(--navy-gradient); color: var(--white); }
         .contact-content { display: flex; flex-direction: column; gap: 40px; align-items: stretch; }
-        .contact h2 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 700; margin-bottom: 2rem; }
-        .contact h2 .highlight { color: var(--gold); }
+        
+        /* Updated Contact Header */
+        .contact h2 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 700; margin-bottom: 2rem; color: var(--white); }
+        
         .contact-info { display: flex; flex-direction: column; gap: 16px; }
         .contact-item {
             display: flex; align-items: center; gap: 16px; font-size: 1rem; padding: 16px;
@@ -360,19 +361,38 @@
         }
         .contact-item .label { color: #9AA4B2; font-size: 0.8rem; font-weight: 600; margin-bottom: 2px; display: block; }
         
+        /* Premium links for Contact Info */
         .contact-item a, .contact-item span.value {
-            color: var(--white) !important; font-weight: 600;
-            display: inline-block; min-height: 24px; text-decoration: none;
+            color: #E8E3D8 !important; /* Soft premium white/ivory */
+            font-weight: 600;
+            display: inline-block; 
+            min-height: 24px; 
+            text-decoration: underline;
+            text-decoration-color: rgba(201, 162, 75, 0.5); /* Subtle gold underline */
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+            transition: all 0.3s ease;
         }
-        /* Make contact links blue/underlined on hover */
-        .contact-item a { color: #60A5FA !important; text-decoration: underline; text-underline-offset: 4px; }
-        .contact-item a:hover { color: var(--gold) !important; }
+        .contact-item a:hover { 
+            color: var(--gold) !important; 
+            text-decoration-color: var(--gold);
+        }
 
         .contact-form {
             background: rgba(255,255,255,0.06); padding: 32px 24px; border-radius: var(--radius-xl);
             backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); box-shadow: var(--shadow-large);
         }
-        .contact-form h3 { font-family: 'Frank Ruhl Libre', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+        
+        /* Updated Form Header */
+        .contact-form h3 { 
+            font-family: 'Frank Ruhl Libre', serif; 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            margin-bottom: 24px; 
+            text-align: center; 
+            color: var(--gold); /* Switched to Gold */
+        }
+        
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; }
         .form-group input, .form-group textarea {
@@ -400,15 +420,20 @@
         .footer-section h3 { font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 14px; color: var(--white); }
         .footer-section p { margin-bottom: 10px; color: #C7CDD7 !important; }
         
-        /* Updated Footer Links Styling */
+        /* Premium links for Footer */
         .footer-section a, .footer-bottom a {
-            color: #60A5FA !important; /* צבע כחול בהיר מותאם לרקע כהה */
+            color: #C7CDD7 !important; /* Soft elegant silver/gray */
             text-decoration: underline;
-            text-underline-offset: 4px;
-            transition: color 0.25s ease;
+            text-decoration-color: rgba(199, 205, 215, 0.2); /* Very subtle underline */
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+            transition: all 0.3s ease;
             font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;
         }
-        .footer-section a:hover, .footer-bottom a:hover { color: var(--gold) !important; }
+        .footer-section a:hover, .footer-bottom a:hover { 
+            color: var(--gold) !important; 
+            text-decoration-color: var(--gold); 
+        }
         
         .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: #6b7280; font-size: 0.85rem; line-height: 1.5; text-align: center; }
 
@@ -498,7 +523,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <header class="floating-nav">
         <div class="nav-inner">
             <a href="#hero" class="nav-logo" aria-label="עו"ד משה נעמן - חזרה לדף הבית">עו"ד <span>משה נעמן</span></a>
@@ -576,7 +600,6 @@
     </header>
 
     <main>
-    <!-- Hero -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
@@ -619,7 +642,6 @@
         </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
@@ -658,7 +680,6 @@
         </div>
     </section>
 
-    <!-- Services -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="fade-in">תחומי <span class="highlight">התמחות</span></h2>
@@ -710,7 +731,6 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <h2 class="fade-in">שאלות <span class="highlight">נפוצות</span></h2>
@@ -789,12 +809,11 @@
     </section>
     </main>
 
-    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-content">
                 <div class="slide-in-left">
-                    <h2>צור <span class="highlight">קשר</span></h2>
+                    <h2>צור קשר</h2>
                     <div class="contact-info">
                         <div class="contact-item">
                             <span class="icon-circle" aria-hidden="true">
@@ -872,7 +891,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -924,7 +942,6 @@
         </div>
     </footer>
 
-    <!-- Quick Contact Buttons -->
     <div class="quick-contact">
         <a href="tel:0544679144" class="quick-contact-btn phone" aria-label="התקשר עכשיו לעו"ד נעמן, מספר 054-4679144">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -936,7 +953,6 @@
         </a>
     </div>
 
-    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
       (function(){
@@ -1129,7 +1145,6 @@
         });
     </script>
 
-    <!-- Accessibility widget (Enable) -->
     <script src="https://cdn.enable.co.il/licenses/enable-L53961qddre3pfya-0226-79489/init.js"></script>
     <script>
     window.addEventListener('load', () => {
